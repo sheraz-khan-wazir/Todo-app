@@ -16,7 +16,7 @@ const user = users.find(user => user.email === email && user.password === passwo
 if(user) {
     localStorage.setItem("currentUser", JSON.stringify(user));
     alert("Login successful! Redirecting to dashboard.");
-    window.location.href = "dashboard.html";
+    window.location.href = "index.html";
 } else {
     alert("Invalid email or password!");
 }
