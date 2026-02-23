@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - TaskMaster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-page">
+    <!-- Header -->
+    <header>
+        <h1>Todo App</h1>
+        <div>
+            <span id="user-email"></span>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    
+
+    <!-- Stats Section -->
+    <section class="dashboard-top">
+    <h2 class="section-title">My Tasks</h2>
+
+    <div class="stats-cards">
+        <div class="stat-card total">
+            <h3 id="stat-total">0</h3>
+            <p>Total Tasks</p>
+        </div>
+
+        <div class="stat-card pending">
+            <h3 id="stat-pending">0</h3>
+            <p>Pending Tasks</p>
+        </div>
+
+        <div class="stat-card completed">
+            <h3 id="stat-completed">0</h3>
+            <p>Completed Tasks</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+    
+   <section>
+    <h2>Create Task</h2>
+    <input type="text" id="task-title" placeholder="Task Title">
+
+    <div id="create-task-row">
+        <textarea id="task-desc" placeholder="Task Description"></textarea>
+        <button id="add-task-btn">Add Task</button>
+    </div>
+</section>
+
+
+    
+
+    
+    <section>
+        <h2>Filter Tasks</h2>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="pending">Pending</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+    </section>
+
+    
+
+
+    <section>
+        <h2>My Tasks</h2>
+        <div id="task-list"></div>
+
+        <div id="empty-state" style="display:none;">
+            <p>No tasks found.</p>
+        </div>
+    </section>
+
+    
+    <section id="edit-section" style="display:none;">
+        <h2>Edit Task</h2>
+        <input type="hidden" id="edit-task-id">
+        <input type="text" id="edit-task-title">
+        <br><br>
+        <textarea id="edit-task-desc"></textarea>
+        <br><br>
+        <button onclick="saveEditTask()">Save</button>
+        <button onclick="closeEditSection()">Cancel</button>
+    </section>
+
+    <script src="/js/dashboard.js"></script>
+
+</body>
+</html>
